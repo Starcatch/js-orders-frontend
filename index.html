@@ -3,9 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>OrderTracker</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <h1>Booktracker</h1>
+    <!-- <div class="card">
+      <div id="new-order-container">
+        <form id="new-order-form" class="input-class"></form>
+        <label> Client Name:</label><input type="text" name="order-client-name" id="new-order-client-name"/><br>
+        <label> Client Phone:</label><input type="text" name="order-phone" id="new-order-phone"/><br>
+        <label> Client Address:</label><input type="text" name="order-address" id="new-order-address"/><br>
+        
+        <input type="submit" id="order-btn" value="Add Order" />
+
+        </form>
+          <div id="order-content">
+            <div class="row">
+                <div class="column">
+                    <div id="orders-container">
+
+                    </div>
+                </div>
+            </div>
+          </div> 
+      </div>
+    </div>  -->
+    <div id="new-order-container">
+      <form id="new-order-form" class="input-class">
+          <label>Client Name:</label><input type="text" name="order-client-name" id="new-order-client-name"/><br>
+          <label>Phone:</label><input type="text" name="order-phone" id="new-order-phone"/><br>
+          <label>Address:</label><input type="text" name="order-address" id="new-order-address"/><br>
+          
+          <input style="width: 60px" type="submit" value="Submit"/>
+      </form>
+      <!-- <button type="name-button" id="name-button">Sort By Name</button> -->
+  </div>
+<div id="orders-content">
+  <ul id="orders-container">
+      
+
+      </ul>
+  </ul>
+</div>
+
+
   <script src="src/components/order.js"></script>
   <script src="src/components/orders.js"></script>
   <script src="src/components/app.js"></script>
