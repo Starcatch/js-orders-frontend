@@ -7,7 +7,18 @@ class Orders {
   }
 
   initBindingEventListeners() {
-    this.document.getElementById('orders-container')
+    this.ordersContainer = document.getElementById('orders-container')
+    this.newOrderClient_name = document.getElementById('new-order-client_name')
+    this.newOrderPhone = document.getElementById('new-order-phone')
+    this.newOrderAddress = document.getElementById('new-order-address')
+    this.orderForm = document.getElementById('new-order-form')
+    this.orderForm.addEventListener('submit',this.createOrder.bind(this))
+
+  }
+
+  createOrder(e){
+    e.preventDefault()
+    console.log('order is being created')
   }
 
   fetchAndLoadOrders() {
@@ -25,12 +36,8 @@ class Orders {
 
     render() {
    
-     this.ordersContainer.innerHTML = this.orders.map(order => `<li>${order.client_name}</li>`).join('')
+     this.ordersContainer.innerHTML = this.orders.map(order => order.renderLi()).join('')
 
-    // this.ordersContainer.innerHTML = this.orders.map(order => order.renderOrder()).join('')
       }
-
-
- 
 
 }
