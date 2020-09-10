@@ -1,11 +1,27 @@
 class Order {
+
   constructor(orderJSON) {
     this.id = orderJSON.id
     this.client_name = orderJSON.client_name
     this.phone = orderJSON.phone
     this.address = orderJSON.address
-    //this.items = orderJSON.items
+    // this.items = orderJSON.items
   }
+
+
+  renderOrdersItems() { // 1
+   
+    return `
+            <ul>${this.items.map(item => {
+                return `
+                    <p>- ${item.title}</p>
+                    <ul>        - ${item.price}</ul>
+                `
+            }).join('')}</ul>
+            `
+  } 
+
+
  renderLi() {
    return ` <ul>
               <h3>${this.client_name}</h3>
@@ -16,25 +32,40 @@ class Order {
    `
  }
 
-//  renderClient_name() {
-//    `<h3>${this.client_name}</h3>`
-//  }
 
-//  renderNewItemButton(){
-//    return `
-//    <button class="new-item-button" id="new_item_${this.id}"> Add Item</button>
-//    `
-//  }
 
+ renderClient_name() {
+   `<h3>${this.client_name}</h3>`
+ }
+
+ renderNewItemButton(){
+   return `
+   <button class="new-item-button" id="new_item_${this.id}"> Add Item</button>
+   `
+ }
+
+
+static renderNewOrderForm(orderId){
+  const formContainer = document.getElementById(`order-${orderId}`)
+  const form = document.createElement("form")
+  form.setAttribute('data-order-id', orderId)
+
+  form.innerHTML = `
+  Item: <input type="text" name="order-item-content" id="order-item-content"/><br>
+  <input type="submit" value="Submit Item"/>
+  `
+  formContainer.appendChild(form)
+} 
+renderOrder(){
+        
+  return `
+      <div class="order-render" id="order-${this.id}">
+          ${this.renderClient_name()}
+          ${this.renderLi()}
+          ${this.renderOrdersItems()}
+          ${this.renderNewItemButton()}
+      </div>
+  `
 }
 
-//   renderOrder() {
-//     return `
-//     <div class= order-render" id="order-${this.id}">
-//     ${this.renderClient_name()}
-//     ${this.renderPhone()}
-//     ${this.renderAddress()}
-//     `
-//      ${this.renderNewItemButton()}
-//   }
-//
+}
