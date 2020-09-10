@@ -15,10 +15,34 @@ class Orders {
     this.orderForm.addEventListener('submit',this.createOrder.bind(this))
 
   }
+   
+  static allOrders() {
+    return allOrders
+  }
 
-  createOrder(e){
+  createOrder(e) {
     e.preventDefault()
-    console.log('order is being created')
+
+    // const value = this.newOrderClient_name.value
+    //   this.adapter.createOrder
+
+    console.log(this)
+   const order = {
+     client_name: this.newOrderClient_name.value,
+     phone: this.newOrderPhone.value,
+     address: this.newOrderAddress.value
+
+   }
+
+   this.adapter.createOrder(order)
+   .then(order => {
+     const object = new Order(order)
+     this.orders.push(object)
+     allOrders.push(object)
+     this.render()
+   })
+   .catch(err => console.log(err))
+
   }
 
   fetchAndLoadOrders() {
