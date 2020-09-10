@@ -1,6 +1,6 @@
 class Orders {
-  static allOrders = []
-  
+  // static allOrders = []
+
   constructor() {
     this.orders = []
     this.adapter = new OrdersAdapter()
@@ -18,21 +18,18 @@ class Orders {
 
   }
    
-  static allOrders() {
-    return allOrders
-  }
+  // static allOrders() {
+  //   return allOrders
+  // }
 
   createOrder(e) {
     e.preventDefault()
-
-    // const value = this.newOrderClient_name.value
-    //   this.adapter.createOrder
-
     console.log(this)
    const order = {
      client_name: this.newOrderClient_name.value,
      phone: this.newOrderPhone.value,
      address: this.newOrderAddress.value
+     
 
    }
 
@@ -40,7 +37,11 @@ class Orders {
    .then(order => {
      const object = new Order(order)
      this.orders.push(object)
-     allOrders.push(object)
+    //  allOrders.push(object)
+    this.newOrderClient_name.value = ''
+    this.newOrderPhone.value = ''
+    this.newOrderAddress.value = ''
+    
      this.render()
    })
    .catch(err => console.log(err))
