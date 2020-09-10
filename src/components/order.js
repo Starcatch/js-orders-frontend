@@ -5,19 +5,20 @@ class Order {
     this.client_name = orderJSON.client_name
     this.phone = orderJSON.phone
     this.address = orderJSON.address
-    // this.items = orderJSON.items
+    this.items = orderJSON.items
   }
 
 
-  renderOrdersItems() { // 1
+  renderOrdersItems() { 
    
     return `
             <ul>${this.items.map(item => {
                 return `
-                    <p>- ${item.title}</p>
-                    <ul>        - ${item.price}</ul>
+                    <p>- ${item.item_name}</p>
+                    <ul>        - ${item.item_price}</ul>
                 `
             }).join('')}</ul>
+
             `
   } 
 
@@ -51,7 +52,7 @@ static renderNewOrderForm(orderId){
   form.setAttribute('data-order-id', orderId)
 
   form.innerHTML = `
-  Item: <input type="text" name="order-item-content" id="order-item-content"/><br>
+  Item: <input type="text" name="order-item-item_price" id="order-item-item_price"/><br>
   <input type="submit" value="Submit Item"/>
   `
   formContainer.appendChild(form)
