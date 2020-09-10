@@ -1,4 +1,6 @@
 class Orders {
+  static allOrders = []
+  
   constructor() {
     this.orders = []
     this.adapter = new OrdersAdapter()

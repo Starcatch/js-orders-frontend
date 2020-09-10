@@ -9,16 +9,15 @@ class OrdersAdapter {
 
   createOrder(order) {
     
-    //fetch returns a promise
-    return fetch(this.baseUrl, {
+    
+    return fetch(this.baseURL, {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
         },
         body: JSON.stringify({ order })
     })
-    //.then is called when the promise resolves 
-    //the response from the database is passed as an arguement 
+   
     .then(res => res.json())
     
 }
