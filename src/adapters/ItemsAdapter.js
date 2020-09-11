@@ -1,20 +1,22 @@
 class ItemsAdapter {
   constructor() {
-    this.baseURL = 'http://localhost:3000/api/items'
+      this.baseUrl = 'http://localhost:3000/api/items'
   }
-  getItem() {
-    return fetch(this.baseURL)
-    .then(res => res.json())
-  }
- createItem(item) {
-   return fetch(this.baseURL, {
-     method: 'POST',
-     headers: {
-      'content-type': 'application/json',
-     },
-     body: JSON.stringify({item})
-   })
-   .then(res => res.json())
- }
 
+  getItems() {
+      return fetch(this.baseUrl).then(res => res.json())
+  }
+
+  createItem(item) {
+  
+      return fetch(this.baseUrl, {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json',
+          },
+          body: JSON.stringify({ item })
+      })
+      .then(res => res.json())
+      
+  }
 }
