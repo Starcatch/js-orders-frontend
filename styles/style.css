@@ -1,24 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
 body {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
-    sans-serif;
-  font-weight: 300;
-  line-height: 1.6em;
-  font-size: 1.3em;
-  background-color: #F1FAEE;
+  font-family: 'Raleway', sans-serif;
+  background: #eef0f1;
+  color: rgb(36, 34, 34);
+  line-height: 1.8;
 }
 
-.center {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+a {
+  text-decoration: none;
+}
+body h1 {
+  text-align: center;
 }
 
-#orders-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 10px;
+.new-order-form {
+width: 960 ;
+margin: auto ;
 }
+
+
+
 
 label {
   display: inline-block;
@@ -28,11 +34,80 @@ label {
   margin: auto;
 }
 
-.container {
-  width: 100%;
-  margin: auto;
-  margin-top: 50px;
-  margin-left: 10px;
+
+#order-container {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
 }
 
-.button {background-color: #4CAF50;} 
+#new-order-container {
+  margin: 30px auto;
+        max-width: 400px;
+        padding: 20px;
+}
+
+#new-order-form label {
+    display: block;
+    color: #666;
+  }
+
+  #new-order-form input {
+    width: 100%;
+    padding: 10px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+  }
+  #new-order-form button {
+    background: #f3b369;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #new-order-form button:hover {
+    background: #0c76a7
+  }
+
+
+#name-button{
+  background: #4c6ca0;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#orders-content {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.delete-bttn {
+  background: #ec5555;
+  color: rgb(252, 247, 247);
+  border: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+
+}
+
+.new-item-button {
+  background: #5dd677;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
