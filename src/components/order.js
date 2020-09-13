@@ -54,7 +54,7 @@ class Order {
       form.innerHTML = `
           Item: <input type="text" name="order-item-item_name" id="order-item-item_name"/><br>
           Item Price:<input type="text" name="order-item_price" id="order-item_price"/><br>            
-          <input type="submit" value="Submit Item"/>
+          <button type="submit-item" id="submit-item-button">Submit Item</button>
       `
 
       
