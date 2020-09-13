@@ -21,4 +21,14 @@ class OrdersAdapter {
       .then(res => res.json())
       
   }
+
+
+
+  
+
+
+
 }
+
+
+

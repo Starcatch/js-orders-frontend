@@ -13,15 +13,17 @@ class Orders {
 
   initBindingsAndEventListeners() {
       this.ordersContainer = document.getElementById('orders-container')
-      this.newOrderClient_name = document.getElementById('new-order-client_name')
+    //   this.orderContainer.addEventListener('click', deleteOrders())
+  
       this.newOrderPhone = document.getElementById('new-order-phone')
       this.newOrderAddress = document.getElementById('new-order-address')
       this.orderForm = document.getElementById('new-order-form')
       this.orderForm.addEventListener('submit', this.createOrder.bind(this))
       this.ordersContainer.addEventListener('click', this.handleNewItemClick)
       this.ordersContainer.addEventListener('submit', this.handleFormOnSubmit.bind(this))
-      this.ordersContainer.addEventListener('dblclick', this.handleOrderClick.bind(this))
-
+      
+   
+    
       this.nameButtonSort = document.getElementById('name-button')
       this.nameButtonSort.addEventListener('click', this.sortOrders.bind(this))
   }
@@ -100,11 +102,13 @@ class Orders {
    .catch(err => console.log(err))
 
   }
+
+//   deleteOrder){
+//       e.preventDefault()
+//       console.log('delete')
+//   }
   
-  handleOrderClick(e){
-      const li = e.target
-      li.contentEditable = true
-  }
+  
 
   handleNewItemClick(e) {
 
@@ -113,9 +117,10 @@ class Orders {
           const orderId = str.split('_')[2];
           Order.renderNewOrderItemForm(orderId);
       }
-
       
   }
+
+
 
   fetchAndLoadOrders() {
       this.orderAdapter

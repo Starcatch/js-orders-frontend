@@ -1,9 +1,10 @@
 class Order {
   constructor(orderJSON) {
+    
       this.id = orderJSON.id
       this.client_name = orderJSON.client_name
       this.phone = orderJSON.phone
-      this.addrerss= orderJSON.address
+      this.address= orderJSON.address
       this.items = orderJSON.items
   }
 
@@ -28,6 +29,16 @@ class Order {
   renderClient_name(){
       return `<h3>${this.client_name}</h3>`
   }
+
+
+  renderOrderDelete() { 
+    return `
+    <button class="delete-bttn" data-id=${this.id} onclick="deleteOrder()">Delete Order</button>
+
+    `
+}
+
+
 
   renderNewItemButton(){
       return `
@@ -58,8 +69,12 @@ class Order {
               ${this.renderLi()}
               ${this.renderOrderItems()}
               ${this.renderNewItemButton()}
-          </div>
+              ${this.renderOrderDelete()}
+         </div>
       `
+
+     
+
   }
 
 
