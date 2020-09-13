@@ -1,5 +1,5 @@
 class Orders {
-  static allOrders = []
+//   static allOrders = []
 
   constructor() {
       this.orders = []
@@ -20,6 +20,8 @@ class Orders {
       this.orderForm.addEventListener('submit', this.createOrder.bind(this))
       this.ordersContainer.addEventListener('click', this.handleNewItemClick)
       this.ordersContainer.addEventListener('submit', this.handleFormOnSubmit.bind(this))
+      this.ordersContainer.addEventListener('dblclick', this.handleOrderClick.bind(this))
+
       this.nameButtonSort = document.getElementById('name-button')
       this.nameButtonSort.addEventListener('click', this.sortOrders.bind(this))
   }
@@ -38,9 +40,9 @@ class Orders {
       return comparison;
   }
          
-  static allOrders() {
-      return allOrders
-  }
+//   static allOrders() {
+//       return allOrders
+//   }
 
 
   sortOrders() {
@@ -84,7 +86,7 @@ class Orders {
      
    }
 
-   this.orderAdapter.createOrders(order)
+   this.orderAdapter.createOrder(order)
    .then(order => {
      const object = new Order(order)
      this.orders.push(object)
@@ -98,7 +100,11 @@ class Orders {
    .catch(err => console.log(err))
 
   }
-
+  
+  handleOrderClick(e){
+      const li = e.target
+      li.contentEditable = true
+  }
 
   handleNewItemClick(e) {
 

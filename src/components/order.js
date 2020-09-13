@@ -2,8 +2,8 @@ class Order {
   constructor(orderJSON) {
       this.id = orderJSON.id
       this.client_name = orderJSON.client_name
-      this.author = orderJSON.phone
-      this.genre = orderJSON.address
+      this.phone = orderJSON.phone
+      this.addrerss= orderJSON.address
       this.items = orderJSON.items
   }
 
@@ -21,7 +21,7 @@ class Order {
   renderLi() {
       return `<ul>
                   <li>${this.phone}</li>
-                  <li>${this.address} </li>
+                  <li>${this.address}</li>
               </ul>`
   }
 
