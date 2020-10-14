@@ -6,6 +6,7 @@ class Order {
       this.phone = orderJSON.phone
       this.address= orderJSON.address
       this.items = orderJSON.items
+      
   }
 
   renderOrderItems(){
@@ -13,7 +14,7 @@ class Order {
           <ul>${this.items.map(item => {
               return `
                   <p>- ${item.item_name}</p>
-                  <ul>        - ${item.item_price}</ul>
+                  <ul>  -${item.item_price}</ul>
               `
           }).join('')}</ul>
           `
@@ -31,12 +32,7 @@ class Order {
   }
 
 
-  renderOrderDelete() { 
-    return `
-    <button class="delete-bttn" data-id=${this.id} onclick="deleteOrder()">Delete Order</button>
 
-    `
-}
 
 
 
@@ -54,7 +50,7 @@ class Order {
       form.innerHTML = `
           Item: <input type="text" name="order-item-item_name" id="order-item-item_name"/><br>
           Item Price:<input type="text" name="order-item_price" id="order-item_price"/><br>            
-          <button type="submit-item" id="submit-item-button">Submit Item</button>
+          <button type="submit-item" id="submit-item -button">Submit Item</button>
       `
 
       
@@ -69,10 +65,10 @@ class Order {
               ${this.renderLi()}
               ${this.renderOrderItems()}
               ${this.renderNewItemButton()}
-              ${this.renderOrderDelete()}
+           
          </div>
       `
-
+ 
      
 
   }
