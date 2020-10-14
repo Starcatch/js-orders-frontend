@@ -22,18 +22,16 @@ class Orders {
     this.nameButtonSort = document.getElementById("name-button");
     this.nameButtonSort.addEventListener("click", this.sortOrders.bind(this));
 
-    this.searchBar = document.getElementById("searchBar");
-    this.searchBar.addEventListener("keyup", this.filterOrders.bind(this));
-
+    
+  
+    
   }
+  
 
-  filterOrders(e){
-    const orderString = e.target.value.toLowerCase();
-    const filteredOrders = this.orders.filter(order => {
-       return order.client_name.toLowerCase().includes(orderString);
-    });
-    console.log(filteredOrders);
-  }
+ 
+  
+
+
 
   compare(a, b) {
     const client_nameA = a.client_name.toUpperCase();

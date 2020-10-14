@@ -1,35 +1,35 @@
 
 
-
-//  const itemButton =  document.getElementById('item-button');
-// let baseURL = 'http://localhost:3000/api/items'
-
-//  itemButton.addEventListener('click',(e) => {
-//   return fetch(this.baseURL).then(res => res.json())
-//   console.log(e)
-// })
+//    this.searchBar = document.getElementById("searchBar");
+  //   this.searchBar.addEventListener("keyup", this.filterOrders.bind(this));
 
 
-filter = (word) => {   
-  const list = document.querySelectorAll('#list li');   
- list.forEach((listItem) => {   
-        const title = listItem.querySelector('h3')
-                if (!title.innerText.includes(word))          listItem.style.display = 'none';   
-               else          
-                  listItem.style.display = '';  
-                  })}
-
-//  FETCH
+  // filterOrders(e){
+  //   const orderString = e.target.value.toLowerCase();
+  //   const filteredOrders = this.orders.filter(order => {
+  //      return order.client_name.toLowerCase().includes(orderString);
+  //   });
+  //   console.log(filteredOrders);
+  // }
 
 
-document.querySelector('form').addEventListener('submit', event => {   event.preventDefault();
-      const pattern = event.target.querySelector('input').value;
-         search(pattern)
-         .then(r => r.json())
-         .then(renderItems)})
-         renderItems = (items) => {    
-           const listContainer = document.querySelector('#list')    listContainer.innerHTML = items.map(item => 
-            `<li>
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-            </li>`).join('')}
+
+//   });
+//   <div class="jumbotron jumbotron-fluid">
+//   <div class="container">
+//       <span id="thisone">5</span>
+//       <button onclick="addOneLike()" type="button" class="btn btn-lg btn-info" id="justdoit">one more</btn>
+//   </div>
+// </div>
+
+//   addOneLike() {
+//     let addlike = document.getElementById('thisone').innerHTML;
+//     addlike++;
+//     document.getElementById('thisone').innerHTML = addLike;
+// }
+
+
+//   other way  let btnLike = document.querySelector('#add');
+//   let input = document.querySelector('input');
+//   btnLike.addEventListener('click', () => {
+//    input.value = parseInt(input.value)+1
